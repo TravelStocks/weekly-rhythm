@@ -4,12 +4,19 @@
 
 ## 网页
 
+- [系统总览与平台分工](https://travelstocks.github.io/weekly-rhythm/systems.html)
 - [每周固定日历](https://travelstocks.github.io/weekly-rhythm/)
 - [月度复盘](https://travelstocks.github.io/weekly-rhythm/monthly.html)
 - [季度复盘](https://travelstocks.github.io/weekly-rhythm/quarterly.html)
 - [每周采购清单](https://travelstocks.github.io/weekly-rhythm/shopping.html)
 
 日历支持拖动、调整时长、新增、修改、删除与锁定。月度流程为 08:30–20:00，季度流程为 08:30–18:00，依据 2026-10-28 执行手册整理。三条主线为主业、股票、个人成长。
+
+## 系统依托的平台
+
+GitHub 承载股票交易系统、财务经济系统、周／月／季整体复盘与每周采购启动。Notion 承载每日记录、阅读与成长，以及各专项系统。技能内容与练习记录归 Notion，本网站保留季度技能目标和练习排期；工作生活专题复盘归 Notion，周期整体回顾与下一步安排归 GitHub。
+
+按 2026-10-28 确认，Notion 的每日记录、阅读与成长已在用；以下 8 个系统待搭建：技能、运动健身、外形、人际关系、娱乐（旅游与 Party 活动）、社交、工作生活复盘、身体指标（体检与恢复情况）。系统总览展示归属、用途和建设状态，并提供已核对的现有入口；待搭建系统不显示为已完成。
 
 复盘页默认逐步填写，每步明确预期产出。支持继续复盘、模块跳转、完整浏览和完成进度；“已完成但待补数据”单独显示，不计作完成。
 
