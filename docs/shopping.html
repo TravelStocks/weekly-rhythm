@@ -1,11 +1,13 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f6f7f2"><title>每周采购清单 · Raymond</title><link rel="stylesheet" href="shopping.css?v=20261028-shopping1"><link rel="stylesheet" href="site-ui.css?v=20261028-ux1"><link rel="stylesheet" href="shopping-quantities.css?v=20261028-shopping1"></head>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f6f7f2"><title>每周采购清单 · Raymond</title><link rel="stylesheet" href="shopping.css?v=20261028-daily1"><link rel="stylesheet" href="site-ui.css?v=20261028-ux1"><link rel="stylesheet" href="shopping-quantities.css?v=20261028-daily1"></head>
 <body data-page="shopping"><div class="page">
-<header><div><div class="eyebrow">给新的一周，备好日常。</div><h1>每周采购清单<span>单人 · 7 天</span></h1><p>先盘库存，只补一周的缺口。用量和次数可以随时调整。</p></div><button class="primary" id="add">＋ 添加物品</button></header>
-<div class="shopping-plan"><span class="plan-icon">7</span><div><strong>周六 11:30–13:00 · 一次补齐一周</strong><p>本次补买 = 每次用量 × 每周次数 − 现有库存，最低为 0。库存留空时先盘点，不默认按 0 计算。</p></div><a href="index.html">查看日历 ↗</a></div>
-<details class="quantity-guide"><summary>用量依据与采购说明 <span>参考草案 · 可调整</span></summary><div>
+<header><div><div class="eyebrow">每天照着吃，周末一次备齐。</div><h1>每周采购清单<span>每日固定 · 单人 7 天</span></h1><p>同样的品类，同样的份量，作为每天的默认。先盘库存，只补一周缺口。</p></div><button class="primary" id="add">＋ 添加物品</button></header>
+<div class="shopping-plan"><span class="plan-icon">7</span><div><strong>每日固定量 × 7 天，周六一次采购</strong><p>食物补买量 = 每日固定量 × 7 天 − 现有库存，最低为 0。库存留空时先盘点；药物按原记录频次计算。</p></div><a href="index.html">周六 11:30–13:00 ↗</a></div>
+<details class="quantity-guide"><summary>每日固定份量与采购说明 <span>参考默认 · 可调整</span></summary><div>
 <p>品类来自你提供的 <a href="https://www.notion.so/4077af2f574e807c8099c5101667d3fb" target="_blank" rel="noopener noreferrer">Notion 清单</a>（核对日期：2026-10-28）。食材库未填写份量；饮食数量是你同意采用的单人一周草案，并非 Notion 已有数值。</p>
-<p>草案分配：水果约 1.725 千克／周，蔬菜约 2.45 千克／周，土豆 400 克／周，坚果与黑芝麻粉共 70 克／周；牛奶 1.75 升、酸奶 700 克。不同品种轮换，外食或不在家时减少次数。上述数值仅说明初始草案，修改后以各项计算为准。</p>
+<p><strong>每日固定组合：</strong>木瓜 50 克、苹果 50 克、蓝莓 25 克、橘子 50 克、香蕉 50 克、草莓 25 克，共 250 克水果；菠菜 100 克、西兰花 100 克、胡萝卜 50 克、鲜香菇 50 克、小番茄 50 克，共 350 克蔬菜；土豆另计 50 克。</p>
+<p><strong>每日其他补给：</strong>黑芝麻粉 2 克、杏仁 2 克、核桃 2 克、南瓜子仁 2 克、巴旦木仁 1 克、碧根果仁 1 克，共 10 克；牛奶 250 毫升、酸奶 100 克。白芝麻粉／白杂粮粉因名称不一致，确认后再补每日固定量。干燥坚果可一次称好一周份量，分成 7 份，减少每天称量。</p>
+<p>一周默认总量：水果 1.75 千克，蔬菜 2.45 千克，土豆 350 克，坚果与黑芝麻粉 70 克，牛奶 1.75 升，酸奶 700 克。以上是初始参考默认；调整每日量后，各项周用量和补买量会随之重算。</p>
 <p>份量参考中国营养学会的 <a href="https://dg.cnsoc.org/article/04/70JvPbFmTlyZbjoO67LeRg.html" target="_blank" rel="noopener noreferrer">蔬果与奶类建议</a>及 <a href="https://dg.cnsoc.org/article/04/RMAbPdrjQ6CGWTwmo62hQg.html" target="_blank" rel="noopener noreferrer">膳食宝塔说明</a>。这里只规划清单中的补给，不代表完整的三餐菜单。</p>
 <p>食材克数按可食部分估算，实际购买时按大小、可食率和包装核对。不自动向上凑整盒、不额外加储备量；小份商品买不到时，先替换品种或调整本周计划。库存只填本周能使用的剩余量。名称有分歧或药物用量不完整的项目先列为待确认。</p>
 <p>开始新一轮时保留用量设置，清除旧库存和勾选，避免重复抵扣上周已经用掉的存货。</p></div></details>
@@ -16,9 +18,9 @@
 <dialog id="item-dialog"><button class="close" aria-label="关闭编辑">×</button><h2 id="dialog-title">调整用量与库存</h2><form id="item-form">
 <div class="form-row"><label>物品名称<input id="item-name" required maxlength="100"></label><label>分类<select id="item-group"><option value="fruit">水果</option><option value="nuts">坚果与籽粉</option><option value="vegetables">蔬菜与薯类</option><option value="dairy">奶与酸奶</option><option value="medicine">药物与补充剂</option></select></label></div>
 <p id="item-basis" class="source-note"></p>
-<div class="form-row"><label>每次用量<input id="item-amount" type="number" min="0" max="10000000" step="any" inputmode="decimal" placeholder="待填写"></label><label>单位<select id="item-unit"><option>克</option><option>毫升</option><option>个</option><option>根</option><option>盒</option><option>袋</option><option>片</option><option>粒</option><option>份</option></select></label></div>
-<div class="form-row"><label>每周次数（7 天合计）<input id="item-times" type="number" min="0" max="100" step="any" inputmode="decimal" placeholder="如：7"></label><label>现有库存（<span id="stock-unit">克</span>）<input id="item-stock" type="number" min="0" max="10000000" step="any" inputmode="decimal" placeholder="先盘点，无库存填 0"></label></div>
+<div class="form-row"><label><span id="amount-label">每日固定量</span><input id="item-amount" type="number" min="0" max="10000000" step="any" inputmode="decimal" placeholder="待填写"></label><label>单位<select id="item-unit"><option>克</option><option>毫升</option><option>个</option><option>根</option><option>盒</option><option>袋</option><option>片</option><option>粒</option><option>份</option></select></label></div>
+<div class="form-row"><label><span id="times-label">本周天数（默认 7 天）</span><input id="item-times" type="number" min="0" max="100" step="any" inputmode="decimal" placeholder="7"></label><label>现有库存（<span id="stock-unit">克</span>）<input id="item-stock" type="number" min="0" max="10000000" step="any" inputmode="decimal" placeholder="先盘点，无库存填 0"></label></div>
 <p id="calc-preview" role="status"></p>
 <label>采购备注<input id="item-quantity" maxlength="1000" placeholder="包装、替代品等；不参与数量计算"></label><label>其他备注<textarea id="item-note" rows="2" maxlength="5000" placeholder="需要留意的信息"></textarea></label>
 <label class="check-label"><input id="item-confirm" type="checkbox">名称 / 规格待确认（暂不列入待买）</label><p id="form-error" role="alert"></p><div class="form-bottom"><button type="button" class="danger" id="delete">删除物品</button><div><button type="button" id="cancel">取消</button><button class="primary" type="submit">保存</button></div></div>
-</form></dialog><div class="toast" id="toast" role="status"></div><script type="module" src="shopping.js?v=20261028-shopping1"></script><script type="module" src="site-ui.js?v=20261028-ux1"></script></body></html>
+</form></dialog><div class="toast" id="toast" role="status"></div><script type="module" src="shopping.js?v=20261028-daily1"></script><script type="module" src="site-ui.js?v=20261028-ux1"></script></body></html>
