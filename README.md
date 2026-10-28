@@ -11,6 +11,8 @@
 
 日历支持拖动、调整时长、新增、修改、删除与锁定。月度流程为 08:30–20:00，季度流程为 08:30–18:00，依据 2026-10-28 执行手册整理。三条主线为主业、股票、个人成长。
 
+复盘页默认逐步填写，每步明确预期产出。支持继续复盘、模块跳转、完整浏览和完成进度；“已完成但待补数据”单独显示，不计作完成。采购清单可点物品名称勾选，按待买项筛选，并查看各分类采购进度。
+
 ## 保存和迁移
 
 页面是静态模板。用户填写的内容仅保存在当前浏览器的 localStorage，不上传 GitHub，不自动跨设备同步。
@@ -26,7 +28,7 @@ GitHub Pages 从 `main` 分支的 `/docs` 目录发布。修改 `docs/` 后提�
 测试（Node.js 22 或更高版本）：
 
 ```sh
-node --test tests/review-model.test.mjs tests/review-manual.test.mjs tests/template-update.test.mjs
+node --test tests/review-model.test.mjs tests/review-manual.test.mjs tests/template-update.test.mjs tests/review-progress.test.mjs
 ```
 
 仓库只包含网页模板、样式、脚本及测试，不包含原 Word 手册、浏览器备份或 Sites 的凭据与部署配置。

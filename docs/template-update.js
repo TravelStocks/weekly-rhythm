@@ -1,4 +1,4 @@
-import {defaults} from './defaults.js';
+import {defaults} from './defaults.js?v=20261028-ux1';
 export const TEMPLATE_REVISION=2;
 export function upgradeTemplate(saved){
  const next=JSON.parse(JSON.stringify(saved));

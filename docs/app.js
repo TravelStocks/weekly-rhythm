@@ -1,5 +1,5 @@
-import {defaults} from './defaults.js';
-import {upgradeTemplate,TEMPLATE_REVISION} from './template-update.js';
+import {defaults} from './defaults.js?v=20261028-ux1';
+import {upgradeTemplate,TEMPLATE_REVISION} from './template-update.js?v=20261028-ux1';
 
 const names=['周一','周二','周三','周四','周五','周六','周日'];
 const en=['MON','TUE','WED','THU','FRI','SAT','SUN'];

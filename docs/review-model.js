@@ -1,4 +1,5 @@
 export const LINES=['主业','股票','个人成长'];
+export function progressFor(ids,fields){return {complete:ids.filter(id=>fields['status-'+id]==='已完成').length,pending:ids.filter(id=>fields['status-'+id]==='已完成但待补数据').length,total:ids.length,next:ids.find(id=>fields['status-'+id]!=='已完成')||'finish'}}
 export const storageKey=kind=>'raymond-'+kind+'-reviews-v1';
 export function validPeriod(kind,p){return typeof p==='string'&&(kind==='monthly'?/^\d{4}-(0[1-9]|1[0-2])$/:/^\d{4}-Q[1-4]$/).test(p)}
 export function currentPeriod(kind){const parts=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit'}).formatToParts(new Date());const get=t=>parts.find(p=>p.type===t).value;return kind==='monthly'?get('year')+'-'+get('month'):get('year')+'-Q'+Math.ceil(Number(get('month'))/3)}
